@@ -1,0 +1,298 @@
+users
+codekata
+attendance
+topics
+tasks
+company_drives
+mentors
+
+
+Find all the topics and tasks which are thought in the month of October
+Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+Find all the company drives and students who are appeared for the placement.
+Find the number of problems solved by the user in codekata
+Find all the mentors with who has the mentee's count more than 15
+Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+[
+{
+        "user": "Naveen kumar",
+        "codekata": 15,
+        "Attendance":20,
+        "topics": ISODate("2020-10-15T11:30:05Z"),
+        "tasks": ISODate("2020-10-21T11:30:05Z"),
+        "company_drives":ISODate("2020-10-21T11:30:05Z"),
+        "mentors":12,
+        "placement":"2 companies",
+        
+    },
+    {
+        "user": "sabarish",
+        "codekata": 250,
+        "Attendance":35,
+        "topics": ISODate("2020-10-10T11:30:05Z"),
+        "tasks": ISODate("2020-10-19T11:30:05Z"),
+        "company_drives":ISODate("2020-10-19T11:30:05Z"),
+        "mentors":11,
+        "placement":"4 companies",
+        
+    },
+    {
+        "user": "janoshan",
+        "codekata": 10,
+        "Attendance":30,
+        "topics": ISODate("2020-10-16T11:30:05Z"),
+        "tasks": ISODate("2020-10-25T11:30:05Z"),
+        "company_drives":ISODate("2020-10-16T11:30:05Z"),
+        "mentors":12,
+        "placement":"0 companies",
+        
+    },
+    {
+        "user": "subasree",
+        "codekata": 25,
+        "Attendance":30,
+        "topics": ISODate("2020-10-16T11:30:05Z"),
+        "tasks": ISODate("2020-10-20T11:30:05Z"),
+        "company_drives":ISODate("2020-10-18T11:30:05Z"),
+        "mentors":19,
+        "placement":"8 companies",
+        
+    },
+    {
+        "user": "priya",
+        "codekata": 25,
+        "Attendance":30,
+        "topics": ISODate("2020-10-20T11:30:05Z"),
+        "tasks": ISODate("2020-10-31T11:30:05Z"),
+        "company_drives":ISODate("2020-10-19T11:30:05Z"),
+        "mentors":28,
+        "placement":"4 companies",
+        
+    },
+
+    ]
+    Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\Santhosh>mongosh
+Current Mongosh Log ID: 63fcd92517c47afbdc09bb63
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.7.1
+Using MongoDB:          6.0.4
+Using Mongosh:          1.7.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-02-15T21:08:56.032+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> show db
+MongoshInvalidInputError: [COMMON-10001] 'db' is not a valid argument for "show".
+test> show dbs
+admin     40.00 KiB
+config    84.00 KiB
+database   8.00 KiB
+learners  40.00 KiB
+local     72.00 KiB
+naveen    40.00 KiB
+sample    48.00 KiB
+zenclass  72.00 KiB
+test> use learners
+switched to db learners
+learners> show collections
+students
+learners> show collections
+students
+learners> show tables
+students
+learners> db.students.find()
+[
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7d"),
+    user: 'Naveen kumar',
+    codekata: 15,
+    Attendance: 20,
+    topics: ISODate("2020-10-15T11:30:05.000Z"),
+    tasks: ISODate("2020-10-21T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-21T11:30:05.000Z"),
+    mentors: 12,
+    placement: '2 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7e"),
+    user: 'sabarish',
+    codekata: 250,
+    Attendance: 35,
+    topics: ISODate("2020-10-10T11:30:05.000Z"),
+    tasks: ISODate("2020-10-19T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-19T11:30:05.000Z"),
+    mentors: 11,
+    placement: '4 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7f"),
+    user: 'janoshan',
+    codekata: 10,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-25T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-16T11:30:05.000Z"),
+    mentors: 12,
+    placement: '0 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a80"),
+    user: 'subasree',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-20T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-18T11:30:05.000Z"),
+    mentors: 19,
+    placement: '8 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a81"),
+    user: 'priya',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-20T11:30:05.000Z"),
+    tasks: ISODate("2020-10-31T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-19T11:30:05.000Z"),
+    mentors: 28,
+    placement: '4 companies'
+  }
+]
+learners> db.student.find({topics:{$gte:ISODate("2020-10-30T11:30:05.000Z"),$lt:ISODate("2020-10-01T11:30:05.000Z")}})
+
+learners> db.students.find({topics:{$gte:ISODate("2020-10-30T11:30:05.000Z"),$lt:ISODate("2020-10-01T11:30:05.000Z")}})
+
+learners> db.students.find({topics:{$gte:ISODate(),$lt:ISODate("2020-10-31T11:30:05.000Z")}})
+learners> db.students.find({topics:{$gte:ISODate("2020-10-15T11:30:05.000Z"),$lt:ISODate("2020-10-31T11:30:05.000Z")}})
+[
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7d"),
+    user: 'Naveen kumar',
+    codekata: 15,
+    Attendance: 20,
+    topics: ISODate("2020-10-15T11:30:05.000Z"),
+    tasks: ISODate("2020-10-21T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-21T11:30:05.000Z"),
+    mentors: 12,
+    placement: '2 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7f"),
+    user: 'janoshan',
+    codekata: 10,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-25T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-16T11:30:05.000Z"),
+    mentors: 12,
+    placement: '0 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a80"),
+    user: 'subasree',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-20T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-18T11:30:05.000Z"),
+    mentors: 19,
+    placement: '8 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a81"),
+    user: 'priya',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-20T11:30:05.000Z"),
+    tasks: ISODate("2020-10-31T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-19T11:30:05.000Z"),
+    mentors: 28,
+    placement: '4 companies'
+  }
+]
+learners>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+learners> db.students.find({topics:{$gte:ISODate("2020-10-21T11:30:05.000Z"),$lt:ISODate("2020-10-16T11:30:05.000Z")}})
+
+learners> db.students.find({company_drives:{$gte:ISODate("2020-10-21T11:30:05.000Z"),$lt:ISODate("2020-10-16T11:30:05.000Z")}})
+
+learners>
+
+learners>
+
+learners> db.students.find({company_drives:{$gte:ISODate("2020-10-21T11:30:05.000Z"),$lt:ISODate("2020-10-16T11:30:05.000Z")}})
+
+learners>
+
+learners>
+
+learners>
+
+learners>
+
+learners> db.students.find({company_drives:{$gte:ISODate("2020-10-16T11:30:05.000Z"),$lt:ISODate("2020-10-21T11:30:05.000Z")}})
+[
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7e"),
+    user: 'sabarish',
+    codekata: 250,
+    Attendance: 35,
+    topics: ISODate("2020-10-10T11:30:05.000Z"),
+    tasks: ISODate("2020-10-19T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-19T11:30:05.000Z"),
+    mentors: 11,
+    placement: '4 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a7f"),
+    user: 'janoshan',
+    codekata: 10,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-25T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-16T11:30:05.000Z"),
+    mentors: 12,
+    placement: '0 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a80"),
+    user: 'subasree',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-16T11:30:05.000Z"),
+    tasks: ISODate("2020-10-20T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-18T11:30:05.000Z"),
+    mentors: 19,
+    placement: '8 companies'
+  },
+  {
+    _id: ObjectId("63f87a7555d5b9fb82592a81"),
+    user: 'priya',
+    codekata: 25,
+    Attendance: 30,
+    topics: ISODate("2020-10-20T11:30:05.000Z"),
+    tasks: ISODate("2020-10-31T11:30:05.000Z"),
+    company_drives: ISODate("2020-10-19T11:30:05.000Z"),
+    mentors: 28,
+    placement: '4 companies'
+  }
+]
+learners>
